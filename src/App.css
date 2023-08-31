@@ -55,7 +55,9 @@ img {
     border-radius: 9px;
     margin-bottom: 1rem;
 }
-
+.job-listing img{
+    width: 100px;
+}
 .job {
     display: flex;
     align-items: center;

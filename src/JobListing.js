@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import jobListingData from './data.json'
-
+import jsonData from './data.json'
 function JobListing() {
-    const [jobList, setJobList] = useState([...jobListingData])
+    const [jobList, setJobList] = useState([...jsonData])
 
-    console.log(jobList)
+
 
     return (
 
@@ -14,7 +13,7 @@ function JobListing() {
 
                 <div className="job-listing" key={job.id}>
                     <div className="job">
-                        <img src={job.logo}  />
+                        <img src={job.logo} alt={job.company} />
                         <div className="job-info-div">
                             <p className="company">{job.company}</p>
                             <p className="position">{job.position}</p>
