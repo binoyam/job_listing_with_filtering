@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 import jsonData from './data.json'
 function JobListing() {
+
     const [jobList, setJobList] = useState([...jsonData])
 
-
-
     return (
-
         <>
-
             {jobList.map((job) => (
-
                 <div className="job-listing" key={job.id}>
                     <div className="job">
                         <img src={job.logo} alt={job.company} />
@@ -26,14 +22,10 @@ function JobListing() {
                     </div>
                     <div className="role-languages">
                         <span>{job.languages}</span>
-
                     </div>
                 </div>
             ))}
         </>
-
-
-
     )
 }
 
