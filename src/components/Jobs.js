@@ -2,7 +2,7 @@ import React from 'react'
 import Job from './Job';
 
 
-const Jobs = ({ data })=> {
+const Jobs = ({ data }) => {
     console.log(data);
 
     return (
@@ -11,6 +11,7 @@ const Jobs = ({ data })=> {
             {data.map((d) => {
                 return <Job data={d} />
             })}
+
         </div>
     )
 }
