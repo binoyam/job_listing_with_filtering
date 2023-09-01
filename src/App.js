@@ -1,17 +1,13 @@
-import React from 'react'
-import './App.css'
-import Header from './Header'
-
-import JobListing from './JobListing'
+import Header from './components/Header'
+import data from './data.json'
+import Jobs from './components/Jobs'
 
 function App() {
 
   return (
-    <div className='App'>
-      <Header />
-      <div className="main">
-        <JobListing />
-      </div>
+    <div>
+      <div className="header"></div>
+      <Jobs data={data} />
     </div>
 
 
