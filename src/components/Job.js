@@ -17,7 +17,7 @@ const Job = (props) => {
     tools
   } = props.data;
 
-  let keyWords = [role, level, ...languages, ...tools]
+  let keywords = [role, level, ...languages, ...tools]
 
   const [icon, setIcon] = useState("")
 
@@ -33,7 +33,8 @@ const Job = (props) => {
   }, [logo])
 
   return (
-    <div className="job-container">
+    <div className={ featured ? "job-container job-container--borderLeft" : "job-container"}>
+      
       <div className="logo">
         <img src={icon} alt={company} />
       </div>
@@ -56,7 +57,7 @@ const Job = (props) => {
       </div>
 
       <div className="part2">
-        {keyWords.map((key, id) => (
+        {keywords.map((key, id) => (
           <span onClick={() => props.setkeywords(key)} key={id}>
             {key}
           </span>
