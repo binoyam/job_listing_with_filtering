@@ -3,9 +3,9 @@ import JobData from '../data.json'
 
 function JobList() {
 
-
+    
   return (
-    {JobData.map((job) => (
+    {job.map((job) => (
     <div className="job">
           <div className="left">
             <div className="job-logo">
