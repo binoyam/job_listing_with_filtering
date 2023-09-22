@@ -47,11 +47,11 @@ header img{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem;
+  padding:2rem;
   background-color: #ffffff;
   border-radius: 7px;
   margin-top: 2rem;
-  max-height: 140px;
+  max-height: 150px;
   box-shadow: 0px 5px 15px -10px var(--DarkGrayishCyan);
 }
 /* job logo and job detail/ 
@@ -61,14 +61,17 @@ left section of job row*/
   align-items: center;
   gap: 1rem;
   height: 80px;
+  max-width: 50%;
 }
 .job-logo{
+  min-width: 80px;
   width: 80px;
   height: 80px;
 }
 .job-logo img{
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .job-info-div{
   height: 100%;
@@ -76,11 +79,12 @@ left section of job row*/
   flex-direction: column;
   justify-content: space-between;
 }
-/* first line of company info */
+/* JOB ROW company info */
 .company-info{
   display: flex;
   align-items: center;
 }
+/* company name*/
 .company-name{
   font-size: 18px;
   margin-right: 0.8rem;
@@ -102,6 +106,7 @@ left section of job row*/
 .featured{
   background-color: var(--VeryDarkGrayishCyan);
 }
+/* JOB position*/
 .position{
   color: var(--VeryDarkGrayishCyan);
   font-size: 20px;
@@ -111,6 +116,7 @@ left section of job row*/
 .position:hover{
   color: var(--DesaturatedDarkCyan);
 }
+/* JOB detail(location/posted-at/contract*/
 .details{
   display: flex;
   align-items: center;
@@ -119,4 +125,20 @@ left section of job row*/
 }
 .details .separator{
   margin: 0 0.8rem;
+}
+/* Job row - skills,languages,tools */
+.skills-div{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 50%;
+}
+.job-specs{
+  font-size: 16px;
+  font-weight: 700;
+  padding: 7px;
+  color: var(--DesaturatedDarkCyan);
+  background-color: var(--LightGrayishCyan1);
+  border-radius: 5px;
+  cursor: pointer;
 }

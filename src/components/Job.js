@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 
 function Job(props) {
   const [icon, setIcon] = useState("");
-  console.log(props);
+  console.log(props.data);
   const {
     company,
     contract,
     featured,
     id,
-    language,
+    languages,
     level,
     location,
     logo,
@@ -17,6 +17,7 @@ function Job(props) {
     role,
     tools,
   } = props.data;
+  const jobSpecs = [role, level, ...languages, ...tools];
 
   const importSvgs = async () => {
     try {
@@ -40,8 +41,8 @@ function Job(props) {
         <div className="job-info-div">
           <div className="company-info">
             <span className="company-name">{company}</span>
-            <span className="new">New!</span>
-            <span className="featured">Featured</span>
+           {props.data.new && <span className="new">New!</span>}
+         {props.data.featured && <span className="featured">Featured</span>}
           </div>
           <div className="position">{position}</div>
           <div className="details">
@@ -54,11 +55,9 @@ function Job(props) {
         </div>
       </div>
       <div className="skills-div">
-        <span> Frontend</span>
-        <span> Senior</span>
-        <span> HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
+        {jobSpecs.map((key, id) => (
+            <span className="job-specs"key={id} >{key}</span>
+        ))}
       </div>
     </div>
   );
