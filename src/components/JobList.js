@@ -1,41 +1,16 @@
-import React from 'react'
-import JobData from '../data.json'
+import React from "react";
+import Job from "./Job";
 
-function JobList() {
-
-    
+function JobList({ data }) {
+  // console.log(data)
   return (
-    {job.map((job) => (
-    <div className="job">
-          <div className="left">
-            <div className="job-logo">
-              <img src="./images/photosnap.svg" alt="" />
-            </div>
-            <div className="job-info-div">
-              <h4>
-                {job.company}
-                <span>New!</span>
-                <span>Featured</span>
-              </h4>
-              <h3>Senior Frontend Developer</h3>
-              <p>
-                <span> 1d ago</span>
-                <span> Full Time</span>
-                <span> USA only</span>
-              </p>
-            </div>
-          </div>
-          <div className="skills-div">
-            <span> Frontend</span>
-            <span> Senior</span>
-            <span> HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
-
-    )}
-  )
+    <>
+      {data.map((d) => {
+        return <Job key={d.id} data={d} />
+      })}
+     
+    </>
+  );
 }
 
-export default JobList
+export default JobList;
