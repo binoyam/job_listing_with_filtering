@@ -35,10 +35,10 @@ function Job(props) {
     <div className="job">
       <div className="left">
         <div className="job-logo">
-          {icon && <img src={icon} alt={company + "logo"} />}
+          {icon && <img src={icon} alt={company + "'s logo"} />}
         </div>
         <div className="job-info-div">
-          <div>
+          <div className="company-info">
             <span className="company-name">{company}</span>
             <span className="new">New!</span>
             <span className="featured">Featured</span>
