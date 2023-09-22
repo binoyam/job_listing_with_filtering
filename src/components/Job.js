@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Job(props) {
+  const [icon, setIcon] = useState("");
   console.log(props);
   const {
     company,
@@ -17,30 +18,39 @@ function Job(props) {
     tools,
   } = props.data;
 
-const [icon, setIcon] = useState("")
-const importSvg= () =>{
-    const 
-}
-
+  const importSvgs = async () => {
+    try {
+      const importedModule = await import(`${logo}`);
+      const svgData = importedModule.default;
+      setIcon(svgData);
+    } catch (error) {
+      console.log("Error importing SVG: ", error);
+    }
+  };
+  useEffect(() => {
+    importSvgs();
+  }, [logo]);
 
   return (
     <div className="job">
       <div className="left">
         <div className="job-logo">
-          <img src={logo} alt="" />
+          {icon && <img src={icon} alt={company + "logo"} />}
         </div>
         <div className="job-info-div">
-          <h4>
-            {company}
-            <span>New!</span>
-            <span>Featured</span>
-          </h4>
-          <h3>{position}</h3>
-          <p>
+          <div>
+            <span className="company-name">{company}</span>
+            <span className="new">New!</span>
+            <span className="featured">Featured</span>
+          </div>
+          <div className="position">{position}</div>
+          <div className="details">
             <span>{postedAt}</span>
+            <span>&nbsp;•&nbsp;</span>
             <span> {contract}</span>
+            <span>&nbsp;•&nbsp;</span>
             <span>{location}</span>
-          </p>
+          </div>
         </div>
       </div>
       <div className="skills-div">
