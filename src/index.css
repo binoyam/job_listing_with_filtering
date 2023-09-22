@@ -4,7 +4,7 @@
   /*(Background) */
   --LightGrayishCyan: hsl(180, 52%, 96%);
   /*(Filter Tablets)*/
-  --LightGrayishCyan: hsl(180, 31%, 95%);
+  --LightGrayishCyan1: hsl(180, 31%, 95%);
   --DarkGrayishCyan: hsl(180, 8%, 52%);
   --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
 }
@@ -16,6 +16,11 @@
 body{
   font-family: 'League Spartan', sans-serif;
   font-size: 15px;
+}
+.App{
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--LightGrayishCyan);
 }
 img{
   max-width: 100%;
@@ -30,4 +35,17 @@ header img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.jobs-container-div{
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+.job{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
