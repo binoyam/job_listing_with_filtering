@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Job(props) {
   const [icon, setIcon] = useState("");
-  console.log(props.data);
+//   console.log(props.data);
   const {
     company,
     contract,
@@ -33,7 +33,7 @@ function Job(props) {
   }, [logo]);
 
   return (
-    <div className="job">
+    <div className={featured ? "job featured-job" : "job"}>
       <div className="left">
         <div className="job-logo">
           {icon && <img src={icon} alt={company + "'s logo"} />}
@@ -41,8 +41,8 @@ function Job(props) {
         <div className="job-info-div">
           <div className="company-info">
             <span className="company-name">{company}</span>
-           {props.data.new && <span className="new">New!</span>}
-         {props.data.featured && <span className="featured">Featured</span>}
+            {props.data.new && <span className="new">New!</span>}
+            {props.data.featured && <span className="featured">Featured</span>}
           </div>
           <div className="position">{position}</div>
           <div className="details">
@@ -56,7 +56,9 @@ function Job(props) {
       </div>
       <div className="skills-div">
         {jobSpecs.map((key, id) => (
-            <span className="job-specs"key={id} >{key}</span>
+          <span className="job-specs" key={id}>
+            {key}
+          </span>
         ))}
       </div>
     </div>

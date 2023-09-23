@@ -8,91 +8,107 @@
   --DarkGrayishCyan: hsl(180, 8%, 52%);
   --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  font-family: 'League Spartan', sans-serif;
+body {
+  font-family: "League Spartan", sans-serif;
   font-size: 15px;
 }
-.App{
+.App {
   width: 100%;
   min-height: 100vh;
   background-color: var(--LightGrayishCyan);
 }
-img{
+img {
   max-width: 100%;
 }
-header{
+ /*header  */
+header {
   width: 100%;
   background-color: var(--DesaturatedDarkCyan);
   height: 165px;
-  overflow: hidden;
+  position: relative;
 }
-header img{
+header img {
   width: 100%;
-  height: 100%;
+  height: 165px;
   object-fit: cover;
 }
-.jobs-container-div{
+/* header filter */
+.filter-bar{
+  /* position: absolute; */
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  padding: 1.2rem;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.jobs-container-div {
   width: 70%;
   margin: 0 auto;
   margin-top: 5rem;
   padding-bottom: 2rem;
 }
 /* job rows*/
-.job{
+.job {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:2rem;
+  padding: 2rem;
   background-color: #ffffff;
   border-radius: 7px;
   margin-top: 2rem;
   max-height: 150px;
   box-shadow: 0px 5px 15px -10px var(--DarkGrayishCyan);
 }
+.job.featured-job {
+  border-left: 5px solid var(--DesaturatedDarkCyan);
+}
 /* job logo and job detail/ 
 left section of job row*/
-.job .left{
+.job .left {
   display: flex;
   align-items: center;
   gap: 1rem;
   height: 80px;
   max-width: 50%;
 }
-.job-logo{
+.job-logo {
   min-width: 80px;
   width: 80px;
   height: 80px;
 }
-.job-logo img{
+.job-logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.job-info-div{
+.job-info-div {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 /* JOB ROW company info */
-.company-info{
+.company-info {
   display: flex;
   align-items: center;
 }
 /* company name*/
-.company-name{
+.company-name {
   font-size: 18px;
   margin-right: 0.8rem;
   color: var(--DesaturatedDarkCyan);
   font-weight: 700;
 }
 .new,
-.featured{
+.featured {
   text-transform: uppercase;
   color: #ffffff;
   font-size: 13px;
@@ -103,37 +119,37 @@ left section of job row*/
   border-radius: 10px;
   margin-right: 10px;
 }
-.featured{
+.featured {
   background-color: var(--VeryDarkGrayishCyan);
 }
 /* JOB position*/
-.position{
+.position {
   color: var(--VeryDarkGrayishCyan);
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
 }
-.position:hover{
+.position:hover {
   color: var(--DesaturatedDarkCyan);
 }
 /* JOB detail(location/posted-at/contract*/
-.details{
+.details {
   display: flex;
   align-items: center;
   color: var(--DarkGrayishCyan);
   font-weight: 500;
 }
-.details .separator{
+.details .separator {
   margin: 0 0.8rem;
 }
 /* Job row - skills,languages,tools */
-.skills-div{
+.skills-div {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   max-width: 50%;
 }
-.job-specs{
+.job-specs {
   font-size: 16px;
   font-weight: 700;
   padding: 7px;
@@ -142,3 +158,4 @@ left section of job row*/
   border-radius: 5px;
   cursor: pointer;
 }
+
