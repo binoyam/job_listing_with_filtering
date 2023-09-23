@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Job from "./Job";
 
 function JobList({ data, setKeyWords, keyWords }) {

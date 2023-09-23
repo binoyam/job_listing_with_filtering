@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Job(props) {
   const [icon, setIcon] = useState("");
-//   console.log(props.data);
+  //   console.log(props.data);
   const {
     company,
     contract,
@@ -56,7 +56,11 @@ function Job(props) {
       </div>
       <div className="skills-div">
         {jobSpecs.map((key, id) => (
-          <span className="job-specs" key={id}>
+          <span
+            className="job-specs"
+            onClick={() => props.setKeyWords(key)}
+            key={id}
+          >
             {key}
           </span>
         ))}
