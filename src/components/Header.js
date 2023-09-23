@@ -20,7 +20,7 @@ function Header({ keyWords, deleteKeyWords, clearAll }) {
               </li>
             );
           })}
-          <a href="/#" onClick={() => clearAll()}>
+          <a className="clear-btn" href="/#" onClick={() => clearAll()}>
             Clear
           </a>
         </ul>
