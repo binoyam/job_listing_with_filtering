@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import JobList from "./components/JobList";
 import data from "./data.json";
+import Filter from "./components/Filter";
 
 function App() {
   const [filterKeyWords, setFilterKeyWords] = useState([]);
@@ -21,7 +22,8 @@ function App() {
   };
   return (
     <div className="App">
-      <Header
+      <Header />
+      <Filter
         keyWords={filterKeyWords}
         deleteKeyWords={deleteKeyword}
         clearAll={clearAll}
