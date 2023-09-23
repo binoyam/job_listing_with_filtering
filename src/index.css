@@ -39,41 +39,55 @@ header img {
 }
 /* header filter */
 .filter-bar {
+  width: 70%;
+  min-height: 70px;
+  padding: 1.4rem 2rem;
   position: absolute;
   bottom: -2rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 70%;
-  padding: 2rem;
   background-color: #ffffff;
   border-radius: 7px;
+  box-shadow: 0px 5px 15px -10px var(--DarkGrayishCyan);
 }
 .filter-bar ul {
+  width: 100%;
+  min-height: 25px;
   list-style: none;
   display: flex;
   align-items: center;
+  gap: 1rem;
   position: relative;
 }
 .filter-bar ul li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--DesaturatedDarkCyan);
-  background-color: var(--LightGrayishCyan1);
   border-radius: 5px;
+  background-color: var(--LightGrayishCyan1);
+  height: 25px;
+  overflow: hidden;
+}
+.filter-bar ul li .key {
+  height: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--DesaturatedDarkCyan);
+  padding: 5px 8px;
 }
 li .delete-btn {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   outline: none;
   background-color: var(--DarkGrayishCyan);
-  /* padding: 5px; */
+  cursor: pointer;
+}
+li .delete-btn:hover {
+  background-color: var(--VeryDarkGrayishCyan);
 }
 li .delete-btn img {
   width: 10px;
@@ -111,6 +125,7 @@ li .delete-btn img {
   margin-top: 2rem;
   max-height: 150px;
   box-shadow: 0px 5px 15px -10px var(--DarkGrayishCyan);
+  border-left: 4px solid transparent;
 }
 .job.featured-job {
   border-left: 5px solid var(--DesaturatedDarkCyan);
@@ -189,17 +204,22 @@ left section of job row*/
 }
 /* Job row - skills,languages,tools */
 .skills-div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .job-specs {
   font-size: 16px;
   font-weight: 700;
   padding: 7px;
+  margin-right: 1rem;
   color: var(--DesaturatedDarkCyan);
   background-color: var(--LightGrayishCyan1);
   border-radius: 5px;
   cursor: pointer;
+}
+.job-specs:hover {
+  color: #ffffff;
+  background-color: var(--DesaturatedDarkCyan);
 }
