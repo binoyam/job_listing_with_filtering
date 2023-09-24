@@ -18,10 +18,10 @@ function Filter({ keyWords, deleteKeyWords, clearAll }) {
             </li>
           );
         })}
+      </ul>
         <a className="clear-btn" href="/#" onClick={() => clearAll()}>
           Clear
         </a>
-      </ul>
     </div>
   );
 }
