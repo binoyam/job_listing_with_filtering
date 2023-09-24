@@ -273,7 +273,7 @@ left section of job row*/
 }
 @media only screen and (max-width: 750px) {
   .filter-bar ul{
-    /* width: 100%; */
+    width: 80%;
     flex-wrap: wrap;
   }
   .jobs-container-div{
