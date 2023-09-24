@@ -7,7 +7,7 @@ import Filter from "./components/Filter";
 
 function App() {
   const [filterKeyWords, setFilterKeyWords] = useState([]);
-
+  console.log(data)
   const addFilterKeywords = (data) => {
     if (!filterKeyWords.includes(data)) {
       setFilterKeyWords([...filterKeyWords, data]);
@@ -23,11 +23,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Filter
-        keyWords={filterKeyWords}
-        deleteKeyWords={deleteKeyword}
-        clearAll={clearAll}
-      />
+
+      {filterKeyWords.length > 0 && (
+        <Filter
+          keyWords={filterKeyWords}
+          deleteKeyWords={deleteKeyword}
+          clearAll={clearAll}
+        />
+      )}
+      
       <main className="jobs-container-div">
         <JobList
           data={data}

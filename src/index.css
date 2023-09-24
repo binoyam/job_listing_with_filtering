@@ -21,6 +21,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--LightGrayishCyan);
+  position: relative;
 }
 img {
   max-width: 100%;
@@ -30,11 +31,12 @@ header {
   width: 100%;
   background-color: var(--DesaturatedDarkCyan);
   height: 165px;
-  position: relative;
+  /* position: relative; */
+  overflow: hidden;
 }
 header img {
   width: 100%;
-  height: 165px;
+  height: 100%;
   object-fit: cover;
 }
 /* header filter */
@@ -43,7 +45,7 @@ header img {
   min-height: 70px;
   padding: 1.4rem 2rem;
   position: absolute;
-  bottom: -2rem;
+  top: 8rem;
   left: 50%;
   transform: translateX(-50%);
   background-color: #ffffff;
@@ -57,7 +59,7 @@ header img {
   display: flex;
   align-items: center;
   gap: 1rem;
-  position: relative;
+  position: relative;/*for clear all button */
 }
 .filter-bar ul li {
   display: flex;
@@ -99,7 +101,7 @@ li .delete-btn img {
   margin-top: 5rem;
   padding-bottom: 2rem;
 }
-/* clear button*/
+/* clear all button*/
 .clear-btn {
   position: absolute;
   top: 50%;
@@ -107,12 +109,13 @@ li .delete-btn img {
   transform: translateY(-50%);
   color: var(--DarkGrayishCyan);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
+  padding-bottom: 1px;
   text-decoration: none;
 }
 .clear-btn:hover {
   color: var(--DesaturatedDarkCyan);
-  text-decoration: underline;
+  border-bottom: 1px solid var(--DarkGrayishCyan);
 }
 /* job rows*/
 .job {
@@ -207,13 +210,15 @@ left section of job row*/
   max-width: 50%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  gap: 10px;
 }
 .job-specs {
   font-size: 16px;
   font-weight: 700;
   padding: 7px;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
+  /* margin-bottom: 10px; */
   color: var(--DesaturatedDarkCyan);
   background-color: var(--LightGrayishCyan1);
   border-radius: 5px;
@@ -222,4 +227,22 @@ left section of job row*/
 .job-specs:hover {
   color: #ffffff;
   background-color: var(--DesaturatedDarkCyan);
+}
+@media only screen and (max-width: 1250px) {
+  .filter-bar,
+  .jobs-container-div{
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .filter-bar,
+  .jobs-container-div{
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 875px) {
+  .filter-bar,
+  .jobs-container-div{
+    width: 95%;
+  }
 }
